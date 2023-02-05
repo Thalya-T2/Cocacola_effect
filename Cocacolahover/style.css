@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+.card{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+   
+    border-radius: 20px;
+}
+.card:hover{
+   width: 600px;
+   transition-delay: 0.5s;
+}
+.card .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .circle::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 350px;
+    height: 350px;
+    background: #191919;
+    border: 8px solid red;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px red) drop-shadow(0 0 60px red);
+    transition: 0.5s, background 0.5s;
+    transition-delay: 0.7s, 1s;
+}
+.card:hover .circle::before{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: red;
+    transition-delay: 0.5s;
+}
+.card .circle .logo{
+    position: relative;
+    width: 250px;
+    transition: 0.s;
+    transition-delay: 0.5s;
+}
+.card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card .product{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+}
+.card:hover .product{
+    top: 25%;
+    left: 72%;
+    transform: translate(-50%, -50%) scale(1) rotate(15deg);
+    height: 450px;
+}
+.card .content{
+    position: absolute;
+    width: 50%;
+    left: 2 0%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+
+}
+.card:hover .content{
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 20px;
+}
+.card .content h2{
+    color: white;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+.card .content p{
+    color: white;
+}
+.card .content a{
+    position: relative;
+    color: #111;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
